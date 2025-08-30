@@ -28,7 +28,7 @@ namespace Operacao_Matematica
             {
                 case "+":
                     resultado = n1 + n2;
-                    Console.WriteLine($"A soma é:  {resultado} ");
+                    Console.WriteLine($"A soma é :  {resultado} ");
                     break;
                 default:
                     Console.WriteLine("Operação não encontrada");
