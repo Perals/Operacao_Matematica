@@ -30,6 +30,19 @@ namespace Operacao_Matematica
                     resultado = n1 + n2;
                     Console.WriteLine($"A soma é :  {resultado} ");
                     break;
+
+                case "-":
+                    resultado = n1 - n2;
+                    Console.WriteLine($"A subtração é :  {resultado} ");
+                    break;
+                case "/":
+                    resultado = n1 / n2;
+                    Console.WriteLine($"A Divisão é :  {resultado}");
+                    break;
+                case "*":
+                    resultado = n1 * n2;
+                    Console.WriteLine($" A Multiplicação é : {resultado}");
+                    break;
                 default:
                     Console.WriteLine("Operação não encontrada");
                     break;
