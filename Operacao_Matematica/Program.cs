@@ -36,9 +36,16 @@ namespace Operacao_Matematica
                     Console.WriteLine($"A subtração é :  {resultado} ");
                     break;
                 case "/":
-                    resultado = n1 / n2;
-                    Console.WriteLine($"A Divisão é :  {resultado}");
-                    break;
+                    if (n1 == 0 || n2 == 0)
+                    {
+                        Console.WriteLine("Não é possivel dividir por zero");
+                    }
+                    else
+                    {
+                        resultado = n1 / n2;
+                        Console.WriteLine($"A Divisão é :  {resultado}");
+                    }
+                     break;                    
                 case "*":
                     resultado = n1 * n2;
                     Console.WriteLine($" A Multiplicação é : {resultado}");
