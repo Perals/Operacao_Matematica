@@ -14,7 +14,7 @@ namespace Operacao_Matematica
             Console.WriteLine("Digite o seu primeiro nome:");
             name = Console.ReadLine();
 
-            Console.WriteLine("Escolha a operação a ser feita (+.-./.*)");
+            Console.WriteLine("Escolha a operação: (+ Soma, - Subtração, * Multiplicação, / Divisão, ^ Potência)");
             operacao = Console.ReadLine();
 
             Console.WriteLine("Digite o primeiro número");
@@ -49,6 +49,10 @@ namespace Operacao_Matematica
                 case "*":
                     resultado = n1 * n2;
                     Console.WriteLine($" A Multiplicação é : {resultado}");
+                    break;
+                case "^":
+                    resultado = Math.Pow( n1, n2 );
+                    Console.WriteLine($"A Potenciação é : {resultado}");
                     break;
                 default:
                     Console.WriteLine("Operação não encontrada");
