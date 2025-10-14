@@ -8,7 +8,8 @@ namespace Operacao_Matematica
         {
             string name;
             string operacao = "";
-            double n1,n2, resultado, resto;
+            double n1, n2, resultado, resto;
+            int contador;
 
             List<String> historico = new List<string>();
 
@@ -26,6 +27,8 @@ namespace Operacao_Matematica
                 Console.WriteLine("5 - Potência");
                 Console.WriteLine("6 - Raiz Quadrada");
                 Console.WriteLine("7 - Ver Histórico");
+                Console.WriteLine("8 - Tabuada");
+                Console.WriteLine("9 - Média");
                 Console.WriteLine("0 - Sair");
                 
                 operacao = Console.ReadLine();
@@ -51,7 +54,59 @@ namespace Operacao_Matematica
                     }
                     continue;
                 }
-                                
+
+                if (operacao == "6")
+                {
+                    Console.WriteLine("Digite o número que deseja saber a Raiz Quadrada: ");
+                    n1 = double.Parse(Console.ReadLine());
+
+                    if (n1 < 0)
+                    {
+                        Console.WriteLine("Não é possivel calcular a raiz de numeros menores do que zero");
+                    }
+                    else
+                    {
+                        resultado = Math.Sqrt(n1);
+                        Console.WriteLine($"A rais quadrada do número é : {resultado}");
+                        historico.Add($"√{n1} = {resultado}");
+                    }
+                    continue;
+                }
+
+                if(operacao ==  "8")
+                {
+                    Console.WriteLine("Digite o número para Obeter a Tabuada:");
+                    n1 = double.Parse(Console.ReadLine());
+
+                    Console.WriteLine($"\nTabuada de {n1}");
+                    for (contador = 1; contador <= 10; contador++)
+                    {
+                        resultado = n1 * contador;
+                        Console.WriteLine($" {n1} X {contador} = {resultado}");
+                    }
+                    historico.Add($"Tabuada do {n1}");
+                    continue;
+                }
+
+                if(operacao == "9")
+                {
+                    Console.WriteLine("Quantos números deseja saber a média?");
+                    int qtdNumeros = int.Parse(Console.ReadLine());
+                    double soma = 0;
+
+                    for(contador = 1; contador <= qtdNumeros; contador++)
+                    {
+                        Console.WriteLine($"Digite o {contador}º número:");
+                        double numero = double.Parse(Console.ReadLine());
+                        soma += numero;
+                    }
+
+                    double media = soma / qtdNumeros;
+                    Console.WriteLine($"\n média dos {qtdNumeros} números é: {media}");
+                    historico.Add($"Média de {qtdNumeros} números = {media}");
+                    continue;
+                }
+
                 if (operacao != "6") {
 
                     Console.WriteLine("Digite o primeiro número");
@@ -101,24 +156,7 @@ namespace Operacao_Matematica
                         default:
                             Console.WriteLine("Operação não encontrada");
                             break;
-                    }
-
-                }
-                else {
-                    Console.WriteLine("Digite o número que deseja saber a Raiz Quadrada: ");
-                    n1 = double.Parse(Console.ReadLine());
-
-                    if (n1 < 0)
-                    {
-                        Console.WriteLine("Não é possivel calcular a raiz de numeros menores do que zero");
-                    }
-                    else
-                    {
-                        resultado = Math.Sqrt(n1);
-                        Console.WriteLine($"A rais quadrada do número é : {resultado}");
-                        historico.Add($"√{n1} = {resultado}");
-                    }
-                                      
+                    }                                              
                     
                 }
             }
